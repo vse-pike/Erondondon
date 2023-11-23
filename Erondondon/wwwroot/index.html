@@ -13,7 +13,7 @@
     <input id="sendBtn" type="button" value="Отправить" disabled="disabled"/>
 </div>
 <div id="chatroom"></div>
-<script src="./node_modules/@microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="/wwwroot/node_modules/@microsoft/signalr/dist/browser/signalr.min.js"></script>
 <script>
     const hubConnection = new signalR.HubConnectionBuilder()
         .withUrl("/chat")
