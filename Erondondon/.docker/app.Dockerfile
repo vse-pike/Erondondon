@@ -1,11 +1,11 @@
-FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
 
 WORKDIR /App
 COPY . ./
 
 RUN apt-get update  \
     && apt-get install -y curl \
-    && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
+    && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs 
 
 WORKDIR /App/wwwroot
