@@ -3,13 +3,13 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
 WORKDIR /App
 COPY . ./
 
+WORKDIR /App/wwwroot
+
 RUN apt-get update  \
     && apt-get install -y curl \
     && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
-    && apt-get install -y nodejs 
-
-WORKDIR /App/wwwroot
-
+    && apt-get install -y nodejs \
+    
 RUN npm install
 
 WORKDIR /App
